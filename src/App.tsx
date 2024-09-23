@@ -12,9 +12,9 @@ const App: React.FC = () => {
 
   return (
     <Wrapper>
-      <InputSection>
+      <EditorSection>
         <EditorTextarea value={templateJSON} onChange={handleEditorChange} />
-      </InputSection>
+      </EditorSection>
       <PreviewSection>
         <Preview data={templateJSON} />
       </PreviewSection>
@@ -29,7 +29,7 @@ const Wrapper = styled.div`
   height: 100vh;
 `;
 
-const InputSection = styled.div`
+const EditorSection = styled.div`
   width: 50%;
   box-sizing: border-box;
 `;
