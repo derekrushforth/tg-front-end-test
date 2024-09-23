@@ -27,5 +27,5 @@ const template = `
     "url": "https://jsonplaceholder.typicode.com/users" 
   }
 ]
-`
+`;
 export default template;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Preview from './components/Preview'; 
+import Preview from './components/Preview';
 import styled from '@emotion/styled';
 import data from './data';
 
@@ -8,32 +8,31 @@ const App: React.FC = () => {
 
   const handleEditorChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTemplateJSON(e.target.value);
-  }
+  };
 
   return (
     <Wrapper>
       <InputSection>
-        <EditorTextarea value={templateJSON} 
-                        onChange={handleEditorChange} />
+        <EditorTextarea value={templateJSON} onChange={handleEditorChange} />
       </InputSection>
       <PreviewSection>
         <Preview data={templateJSON} />
       </PreviewSection>
     </Wrapper>
   );
-}
+};
 
 export default App;
 
 const Wrapper = styled.div`
   display: flex;
   height: 100vh;
-`
+`;
 
 const InputSection = styled.div`
   width: 50%;
   box-sizing: border-box;
-`
+`;
 
 const EditorTextarea = styled.textarea`
   width: 100%;
@@ -44,7 +43,8 @@ const EditorTextarea = styled.textarea`
   padding: 20px;
   box-sizing: border-box;
   border-radius: 0;
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
   background-color: #000;
   color: #fff;
   line-height: 1.4;
@@ -52,7 +52,7 @@ const EditorTextarea = styled.textarea`
   &:focus {
     outline: none;
   }
-`
+`;
 
 const PreviewSection = styled.div`
   width: 50%;
@@ -60,4 +60,4 @@ const PreviewSection = styled.div`
   box-sizing: border-box;
   line-height: 1.75rem;
   overflow-y: scroll;
-`
+`;

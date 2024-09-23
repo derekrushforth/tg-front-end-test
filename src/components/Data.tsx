@@ -6,7 +6,7 @@ const Data: React.FC<DataBlock> = ({ url }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [responseData, setResponseData] = useState<string>();
-  
+
   const fetchData = useCallback(async () => {
     setLoading(true);
     setError(null);
@@ -21,33 +21,36 @@ const Data: React.FC<DataBlock> = ({ url }) => {
 
       const json = await response.json();
       setResponseData(json);
-    } catch(e) {
+    } catch (e) {
       setError('Error fetching data');
     } finally {
       setLoading(false);
     }
-  }, [url])
+  }, [url]);
 
   useEffect(() => {
     fetchData();
   }, [url]);
 
   const renderResponse = () => {
-    if (loading) return 'Fetching Data...'
-    if (error) return error
+    if (loading) return 'Fetching Data...';
+    if (error) return error;
 
-    return JSON.stringify(responseData, null, 2)
-  }
+    return JSON.stringify(responseData, null, 2);
+  };
 
   return (
     <Wrapper>
-      <h2>Data Response <button onClick={fetchData} 
-                                disabled={loading}
-                                aria-label="Refresh">Refresh</button></h2>
+      <h2>
+        Data Response{' '}
+        <button onClick={fetchData} disabled={loading} aria-label="Refresh">
+          Refresh
+        </button>
+      </h2>
       <Response>{renderResponse()}</Response>
     </Wrapper>
-  )
-}
+  );
+};
 
 export default Data;
 

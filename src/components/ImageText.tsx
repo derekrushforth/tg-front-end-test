@@ -6,28 +6,29 @@ interface WrapperProps {
   leftToRight: boolean;
 }
 
-const ImageText: React.FC<ImageTextBlock> = ({ 
-  title, 
-  text, 
-  imageURI, 
-  leftToRight = true }) => {
+const ImageText: React.FC<ImageTextBlock> = ({
+  title,
+  text,
+  imageURI,
+  leftToRight = true,
+}) => {
   return (
-    <Wrapper leftToRight={leftToRight} >
+    <Wrapper leftToRight={leftToRight}>
       <Image src={imageURI} />
       <TextWrapper>
         <Title>{title}</Title>
         <Text>{text}</Text>
       </TextWrapper>
     </Wrapper>
-  )
-}
+  );
+};
 
 export default ImageText;
 
 const Wrapper = styled.div<WrapperProps>`
   margin: 0 0 25px;
   display: flex;
-  flex-direction: ${props => (props.leftToRight ? 'row' : 'row-reverse')};
+  flex-direction: ${(props) => (props.leftToRight ? 'row' : 'row-reverse')};
 `;
 
 const Image = styled.img`

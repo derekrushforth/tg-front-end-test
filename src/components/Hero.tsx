@@ -7,8 +7,8 @@ const Hero: React.FC<HeroBlock> = ({ imageURI }) => {
     <Wrapper>
       <Image src={imageURI} />
     </Wrapper>
-  )
-}
+  );
+};
 
 export default Hero;
 
