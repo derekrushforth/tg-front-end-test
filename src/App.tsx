@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Preview from './components/Preview';
 import styled from '@emotion/styled';
+import Preview from './components/Preview';
 import data from './data';
 
 const App: React.FC = () => {
